@@ -7,7 +7,6 @@ import { Text } from "react-native";
 export default function RootLayout() {
   const [isOnboarded, setIsOnboarded] = useState(null);
 
-  // Check if the user has completed onboarding
   useEffect(() => {
     const checkOnboardingStatus = async () => {
       const onboarded = await AsyncStorage.getItem("onboarded");
@@ -18,7 +17,7 @@ export default function RootLayout() {
   }, []);
 
   if (isOnboarded === null) {
-    return <Text>Loading...</Text>; // Show a loading screen or spinner
+    return <Text>Loading...</Text>;
   }
 
   return (
